@@ -16,4 +16,6 @@ Rails.application.routes.draw do
   resources :players
   post '/send', to: 'message#send_message'
   post '/receive', to: 'message#receive_message'
+
+  resources :games
 end

@@ -8,7 +8,7 @@ class PlayersController < ApplicationController
   end
 
   def create
-    @players = Player.new(player_params)
+    @player = Player.new(player_params)
 
     if @player.save
       redirect_to @player, notice: "#{@player.first_name} #{@player.last_name} was successfully added."
