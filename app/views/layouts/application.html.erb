@@ -4,23 +4,17 @@
     <title>TeamTracker</title>
     <%= csrf_meta_tags %>
 
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
+    <%= render "layouts/nav" %>
   <body>
-  <li>
-    <%= link_to('Home', teams_path) %>
-  </li>
-    <% if user_signed_in? %>
-  <li>
-    <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
-  </li>
-  <% else %>
-    <li>
-    <%= link_to('Login', new_user_session_path)  %>
-    </li>
-  <% end %>
     <%= yield %>
   </body>
 </html>
