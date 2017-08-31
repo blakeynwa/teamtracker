@@ -5,7 +5,8 @@ class ApplicationController < ActionController::Base
   private
 
   def after_sign_in_path_for(resource_or_scope)
-    teams_path
+    # teams_path
+    user_root_url
   end
 
   def after_sign_out_path_for(resource_or_scope)
