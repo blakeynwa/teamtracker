@@ -1,0 +1,23 @@
+
+<h1>Player list</h1>
+<%= link_to 'New player', new_player_path %>
+<table>
+  <tr>
+    <th>First Name</th>
+    <th>Last Name</th>
+    <th>Phone Number</th>
+  </tr>
+
+  <% @players.each do |player| %>
+    <tr>
+      <td><%= player.first_name %></td>
+      <td><%= player.last_name %></td>
+      <td><%= player.phone_number %></td>
+      <td><%= link_to 'Show', player_path(player) %></td>
+      <td><%= link_to 'Edit', edit_player_path(player) %></td>
+      <td><%= link_to 'Destroy', player_path(player),
+              method: :delete,
+              data: { confirm: "Are you sure you want to remove #{player.first_name} #{player.last_name}" } %></td>
+    </tr>
+  <% end %>
+</table>
