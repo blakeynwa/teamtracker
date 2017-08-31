@@ -1,0 +1,17 @@
+<p>
+  <strong>Team Name:</strong>
+  <%= @team.name %>
+</p>
+
+<p>
+  <strong>Sport:</strong>
+  <%= @team.sport %>
+</p>
+ 
+<p>
+  <strong>Number required to play:</strong>
+  <%= @team.number_required_to_play %>
+</p>
+ 
+<%= link_to 'Edit', edit_team_path(@team) %> |
+<%= link_to 'Back', teams_path %>

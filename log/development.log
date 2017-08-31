@@ -1,3 +1,598 @@
+
+Started GET "/" for 127.0.0.1 at 2017-08-30 16:10:40 -0700
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/blakemeyer/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/railties-5.1.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/blakemeyer/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/railties-5.1.3/lib/rails/templates/rails/welcome/index.html.erb (4.7ms)
+Completed 200 OK in 166ms (Views: 13.9ms)
+
+
+Started GET "/teams/index" for 127.0.0.1 at 2017-08-30 16:11:05 -0700
+Processing by TeamsController#index as HTML
+  Rendering teams/index.html.erb within layouts/application
+  Rendered teams/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 685ms (Views: 680.9ms)
+
+
+Started GET "/teams/index" for 127.0.0.1 at 2017-08-30 17:36:47 -0700
+Processing by TeamsController#index as HTML
+  Rendering teams/index.html.erb within layouts/application
+  Rendered teams/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 52ms (Views: 47.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-30 17:36:52 -0700
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/blakemeyer/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/railties-5.1.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/blakemeyer/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/railties-5.1.3/lib/rails/templates/rails/welcome/index.html.erb (7.2ms)
+Completed 200 OK in 15ms (Views: 10.2ms)
+
+
+  [1m[35m (8.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (26.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7319348385131800500)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateTeams (20170831003955)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (24.3ms)[0m  [1m[35mCREATE TABLE "teams" ("id" bigserial primary key, "sport" character varying, "number_required_to_play" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170831003955"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2017-08-31 00:47:08.311104"], ["updated_at", "2017-08-31 00:47:08.311104"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(7319348385131800500)[0m
+  [1m[35m (7.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2017-08-31 10:14:37 -0700
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/blakemeyer/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/railties-5.1.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/blakemeyer/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/railties-5.1.3/lib/rails/templates/rails/welcome/index.html.erb (3.7ms)
+Completed 200 OK in 20ms (Views: 9.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/teams" for 127.0.0.1 at 2017-08-31 10:14:44 -0700
+Processing by TeamsController#index as HTML
+  Rendering teams/index.html.erb within layouts/application
+  [1m[36mTeam Load (3.3ms)[0m  [1m[34mSELECT "teams".* FROM "teams"[0m
+  Rendered teams/index.html.erb within layouts/application (21.8ms)
+Completed 200 OK in 292ms (Views: 274.6ms | ActiveRecord: 12.3ms)
+
+
+Started GET "/teams/new" for 127.0.0.1 at 2017-08-31 10:14:47 -0700
+Processing by TeamsController#new as HTML
+  Rendering teams/new.html.erb within layouts/application
+  Rendered teams/new.html.erb within layouts/application (15.8ms)
+Completed 500 Internal Server Error in 46ms (ActiveRecord: 6.8ms)
+
+
+  
+ActionView::Template::Error (Missing partial teams/_form, application/_form with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/blakemeyer/campus-directory/phase_3/teamtracker/app/views"
+):
+    1: <h1>New team</h1>
+    2:  
+    3: <%= render 'form' %>
+    4:  
+    5: <%= link_to 'Back', teams_path %>
+  
+app/views/teams/new.html.erb:3:in `_app_views_teams_new_html_erb__2161581182427062464_70260093802400'
+Started GET "/teams/new" for 127.0.0.1 at 2017-08-31 10:16:49 -0700
+Processing by TeamsController#new as HTML
+  Rendering teams/new.html.erb within layouts/application
+  Rendered teams/_form.html.erb (32.0ms)
+  Rendered teams/new.html.erb within layouts/application (33.9ms)
+Completed 500 Internal Server Error in 40ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `name' for #<Team:0x007fcd69ab4288>):
+    16:  
+    17:   <p>
+    18:     <%= f.label :name %><br>
+    19:     <%= f.text_field :name %>
+    20:   </p>
+    21: 
+    22:   <p>
+  
+app/views/teams/_form.html.erb:19:in `block in _app_views_teams__form_html_erb__2633225169101905693_70260085722760'
+app/views/teams/_form.html.erb:1:in `_app_views_teams__form_html_erb__2633225169101905693_70260085722760'
+app/views/teams/new.html.erb:3:in `_app_views_teams_new_html_erb__2161581182427062464_70260091799660'
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (7807.7ms)[0m  [1m[35mDROP DATABASE IF EXISTS "team_tracker_development"[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7319348385131800500)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateTeams (20170831003955)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (29.2ms)[0m  [1m[35mDROP TABLE "teams"[0m
+  [1m[35mSQL (1.2ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20170831003955"]]
+  [1m[35m (125.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(7319348385131800500)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7319348385131800500)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateTeams (20170831003955)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (15.9ms)[0m  [1m[35mCREATE TABLE "teams" ("id" bigserial primary key, "name" character varying, "sport" character varying, "number_required_to_play" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170831003955"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(7319348385131800500)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/teams/new" for 127.0.0.1 at 2017-08-31 10:17:39 -0700
+Processing by TeamsController#new as HTML
+  Rendering teams/new.html.erb within layouts/application
+  Rendered teams/_form.html.erb (12.1ms)
+  Rendered teams/new.html.erb within layouts/application (14.2ms)
+Completed 200 OK in 41ms (Views: 30.0ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/teams" for 127.0.0.1 at 2017-08-31 10:17:53 -0700
+Processing by TeamsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"uXqdrsPXNIg1Oi58VTg4KSYRX7X4QXep6z84uLOJLz18utRl5OZ3x23KuW+/r3hhGg+idraEoMq79m+2nvQmGw==", "team"=>{"name"=>"Fuckin' Seagulls", "sport"=>"Basketball", "number_required_to_play"=>"5"}, "commit"=>"Create Team"}
+Unpermitted parameter: :name
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO "teams" ("sport", "number_required_to_play", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["sport", "Basketball"], ["number_required_to_play", 5], ["created_at", "2017-08-31 17:17:54.003313"], ["updated_at", "2017-08-31 17:17:54.003313"]]
+  [1m[35m (6.1ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/teams/1
+Completed 302 Found in 16ms (ActiveRecord: 7.5ms)
+
+
+Started GET "/teams/1" for 127.0.0.1 at 2017-08-31 10:17:54 -0700
+Processing by TeamsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTeam Load (0.7ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" WHERE "teams"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering teams/show.html.erb within layouts/application
+  Rendered teams/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 24ms (Views: 17.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/teams" for 127.0.0.1 at 2017-08-31 10:17:56 -0700
+Processing by TeamsController#index as HTML
+  Rendering teams/index.html.erb within layouts/application
+  [1m[36mTeam Load (0.4ms)[0m  [1m[34mSELECT "teams".* FROM "teams"[0m
+  Rendered teams/index.html.erb within layouts/application (30.7ms)
+Completed 500 Internal Server Error in 40ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `number_require_to_play' for #<Team:0x007fcd6441e7c0>
+Did you mean?  number_required_to_play
+               number_required_to_play=
+               number_required_to_play?
+               number_required_to_play_was):
+    11:     <tr>
+    12:       <td><%= team.name %></td>
+    13:       <td><%= team.sport %></td>
+    14:       <td><%= team.number_require_to_play %></td>
+    15:       <td><%= link_to 'Show', team_path(team) %></td>
+    16:       <td><%= link_to 'Edit', edit_team_path(team) %></td>
+    17:       <td><%= link_to 'Destroy', team_path(team),
+  
+app/views/teams/index.html.erb:14:in `block in _app_views_teams_index_html_erb___3864252718067711048_70260094517360'
+app/views/teams/index.html.erb:10:in `_app_views_teams_index_html_erb___3864252718067711048_70260094517360'
+Started GET "/teams" for 127.0.0.1 at 2017-08-31 10:18:19 -0700
+Processing by TeamsController#index as HTML
+  Rendering teams/index.html.erb within layouts/application
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT "teams".* FROM "teams"[0m
+  Rendered teams/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 20ms (Views: 17.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/teams" for 127.0.0.1 at 2017-08-31 10:18:57 -0700
+Processing by TeamsController#index as HTML
+  Rendering teams/index.html.erb within layouts/application
+  [1m[36mTeam Load (0.3ms)[0m  [1m[34mSELECT "teams".* FROM "teams"[0m
+  Rendered teams/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 22ms (Views: 19.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/teams/new" for 127.0.0.1 at 2017-08-31 10:18:58 -0700
+Processing by TeamsController#new as HTML
+  Rendering teams/new.html.erb within layouts/application
+  Rendered teams/_form.html.erb (3.9ms)
+  Rendered teams/new.html.erb within layouts/application (7.1ms)
+Completed 200 OK in 46ms (Views: 41.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/teams" for 127.0.0.1 at 2017-08-31 10:19:03 -0700
+Processing by TeamsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9puHaa20stqQosGzRwQCiui0t5N+o80elMP5EZS6WUfG5p8YUMMCo/UCnUpbr7Yp0pzDEm/jKxXJKL4EXe3DZw==", "team"=>{"name"=>"dudes", "sport"=>"softball", "number_required_to_play"=>"12"}, "commit"=>"Create Team"}
+Unpermitted parameter: :name
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (2.0ms)[0m  [1m[32mINSERT INTO "teams" ("sport", "number_required_to_play", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["sport", "softball"], ["number_required_to_play", 12], ["created_at", "2017-08-31 17:19:03.680613"], ["updated_at", "2017-08-31 17:19:03.680613"]]
+  [1m[35m (6.4ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/teams/2
+Completed 302 Found in 14ms (ActiveRecord: 8.5ms)
+
+
+Started GET "/teams/2" for 127.0.0.1 at 2017-08-31 10:19:03 -0700
+Processing by TeamsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" WHERE "teams"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering teams/show.html.erb within layouts/application
+  Rendered teams/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 19ms (Views: 15.8ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/teams" for 127.0.0.1 at 2017-08-31 10:20:03 -0700
+Processing by TeamsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Kw2z7bLRRkZmaEbryHA0esOuCGe3ZrHBOPHBhllep3nuzfomleAFCT6Y0fgi53Qy/7D1pPmjZqJoOJaIdCOuXw==", "team"=>{"name"=>"dudes", "sport"=>"softball", "number_required_to_play"=>"12"}, "commit"=>"Create Team"}
+Unpermitted parameter: :name
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "teams" ("sport", "number_required_to_play", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["sport", "softball"], ["number_required_to_play", 12], ["created_at", "2017-08-31 17:20:03.483047"], ["updated_at", "2017-08-31 17:20:03.483047"]]
+  [1m[35m (7.8ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/teams/3
+Completed 302 Found in 12ms (ActiveRecord: 8.2ms)
+
+
+Started GET "/teams/3" for 127.0.0.1 at 2017-08-31 10:20:03 -0700
+Processing by TeamsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mTeam Load (0.3ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" WHERE "teams"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering teams/show.html.erb within layouts/application
+  Rendered teams/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 20ms (Views: 16.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/teams" for 127.0.0.1 at 2017-08-31 10:20:06 -0700
+Processing by TeamsController#index as HTML
+  Rendering teams/index.html.erb within layouts/application
+  [1m[36mTeam Load (0.4ms)[0m  [1m[34mSELECT "teams".* FROM "teams"[0m
+  Rendered teams/index.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 43ms (Views: 38.1ms | ActiveRecord: 0.4ms)
+
+
+Started DELETE "/teams/1" for 127.0.0.1 at 2017-08-31 10:20:10 -0700
+Processing by TeamsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"NmqNe6psdAyi34OVJI+jY5VrN/wOUUe9X8UCk3mRwi7zqsSwjV03Q/ovFIbOGOMrqXXKP0CUkN4PDFWdVOzLCA==", "id"=>"1"}
+  [1m[36mTeam Load (0.5ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" WHERE "teams"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (3.8ms)[0m  [1m[31mDELETE FROM "teams" WHERE "teams"."id" = $1[0m  [["id", 1]]
+  [1m[35m (10.7ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/teams
+Completed 302 Found in 25ms (ActiveRecord: 15.5ms)
+
+
+Started GET "/teams" for 127.0.0.1 at 2017-08-31 10:20:10 -0700
+Processing by TeamsController#index as HTML
+  Rendering teams/index.html.erb within layouts/application
+  [1m[36mTeam Load (0.5ms)[0m  [1m[34mSELECT "teams".* FROM "teams"[0m
+  Rendered teams/index.html.erb within layouts/application (15.1ms)
+Completed 200 OK in 53ms (Views: 49.2ms | ActiveRecord: 0.5ms)
+
+
+Started DELETE "/teams/2" for 127.0.0.1 at 2017-08-31 10:20:13 -0700
+Processing by TeamsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"iHWTNlBMx4SamFL5sfkZ3hGNjLY7SeG9/l2NScGqf05Ntdr9d32Ey8JoxepbblmWLZNxdXWMNt6ulNpH7Nd2aA==", "id"=>"2"}
+  [1m[36mTeam Load (1.4ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" WHERE "teams"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM "teams" WHERE "teams"."id" = $1[0m  [["id", 2]]
+  [1m[35m (9.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/teams
+Completed 302 Found in 18ms (ActiveRecord: 11.3ms)
+
+
+Started GET "/teams" for 127.0.0.1 at 2017-08-31 10:20:13 -0700
+Processing by TeamsController#index as HTML
+  Rendering teams/index.html.erb within layouts/application
+  [1m[36mTeam Load (0.6ms)[0m  [1m[34mSELECT "teams".* FROM "teams"[0m
+  Rendered teams/index.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 54ms (Views: 48.9ms | ActiveRecord: 0.6ms)
+
+
+Started DELETE "/teams/3" for 127.0.0.1 at 2017-08-31 10:20:15 -0700
+Processing by TeamsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"pLVwIBYePmR3yC0GO9JG+0uB8/++b0vL0p2YvUCsqw5hdTnrMS99Ky84uhXRRQazd58OPPCqnKiCVM+zbdGiKA==", "id"=>"3"}
+  [1m[36mTeam Load (0.9ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" WHERE "teams"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (2.2ms)[0m  [1m[31mDELETE FROM "teams" WHERE "teams"."id" = $1[0m  [["id", 3]]
+  [1m[35m (12.7ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/teams
+Completed 302 Found in 21ms (ActiveRecord: 16.1ms)
+
+
+Started GET "/teams" for 127.0.0.1 at 2017-08-31 10:20:15 -0700
+Processing by TeamsController#index as HTML
+  Rendering teams/index.html.erb within layouts/application
+  [1m[36mTeam Load (0.3ms)[0m  [1m[34mSELECT "teams".* FROM "teams"[0m
+  Rendered teams/index.html.erb within layouts/application (8.9ms)
+Completed 200 OK in 40ms (Views: 37.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/teams" for 127.0.0.1 at 2017-08-31 10:20:17 -0700
+Processing by TeamsController#index as HTML
+  Rendering teams/index.html.erb within layouts/application
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT "teams".* FROM "teams"[0m
+  Rendered teams/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 25ms (Views: 22.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/teams/new" for 127.0.0.1 at 2017-08-31 10:20:18 -0700
+Processing by TeamsController#new as HTML
+  Rendering teams/new.html.erb within layouts/application
+  Rendered teams/_form.html.erb (9.8ms)
+  Rendered teams/new.html.erb within layouts/application (14.4ms)
+Completed 200 OK in 49ms (Views: 44.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/teams" for 127.0.0.1 at 2017-08-31 10:20:22 -0700
+Processing by TeamsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"I5ErcA8IdE9rtNalOWwIEWrlXkYLQcdT7xEcpi4EEuIT7DMB8n/ENg4Uilwlx7yyUM0qxxoBIViy+luz51OIwg==", "team"=>{"name"=>"asdf", "sport"=>"asdf", "number_required_to_play"=>"4"}, "commit"=>"Create Team"}
+Unpermitted parameter: :name
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "teams" ("sport", "number_required_to_play", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["sport", "asdf"], ["number_required_to_play", 4], ["created_at", "2017-08-31 17:20:22.920258"], ["updated_at", "2017-08-31 17:20:22.920258"]]
+  [1m[35m (5.7ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/teams/4
+Completed 302 Found in 15ms (ActiveRecord: 6.6ms)
+
+
+Started GET "/teams/4" for 127.0.0.1 at 2017-08-31 10:20:22 -0700
+Processing by TeamsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" WHERE "teams"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering teams/show.html.erb within layouts/application
+  Rendered teams/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 19ms (Views: 16.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/teams" for 127.0.0.1 at 2017-08-31 10:20:26 -0700
+Processing by TeamsController#index as HTML
+  Rendering teams/index.html.erb within layouts/application
+  [1m[36mTeam Load (0.7ms)[0m  [1m[34mSELECT "teams".* FROM "teams"[0m
+  Rendered teams/index.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 35ms (Views: 30.8ms | ActiveRecord: 0.7ms)
+
+
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (333.1ms)[0m  [1m[35mDROP DATABASE IF EXISTS "team_tracker_development"[0m
+  [1m[35m (311.6ms)[0m  [1m[35mDROP DATABASE IF EXISTS "team_tracker_test"[0m
+  [1m[35m (7.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (2.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7319348385131800500)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateTeams (20170831003955)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (3.3ms)[0m  [1m[35mCREATE TABLE "teams" ("id" bigserial primary key, "name" character varying, "sport" character varying, "number_required_to_play" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170831003955"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2017-08-31 17:21:03.835414"], ["updated_at", "2017-08-31 17:21:03.835414"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(7319348385131800500)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/teams" for 127.0.0.1 at 2017-08-31 10:21:10 -0700
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TeamsController#index as HTML
+  Rendering teams/index.html.erb within layouts/application
+  [1m[36mTeam Load (0.6ms)[0m  [1m[34mSELECT "teams".* FROM "teams"[0m
+  Rendered teams/index.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 213ms (Views: 200.4ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/teams/new" for 127.0.0.1 at 2017-08-31 10:21:12 -0700
+Processing by TeamsController#new as HTML
+  Rendering teams/new.html.erb within layouts/application
+  Rendered teams/_form.html.erb (11.8ms)
+  Rendered teams/new.html.erb within layouts/application (14.6ms)
+Completed 200 OK in 73ms (Views: 31.7ms | ActiveRecord: 14.0ms)
+
+
+Started POST "/teams" for 127.0.0.1 at 2017-08-31 10:21:19 -0700
+Processing by TeamsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"KKI6HM5CLjtuDB0beQJjgDfG+y7LHIZ1DFytTbQ338wY3yJtMzWeQgusQeJlqdcjDe6Pr9pcYH5Rt+pYfWBF7A==", "team"=>{"name"=>"Fuckin' Seagulls", "sport"=>"Basketball", "number_required_to_play"=>"5"}, "commit"=>"Create Team"}
+Unpermitted parameter: :name
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "teams" ("sport", "number_required_to_play", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["sport", "Basketball"], ["number_required_to_play", 5], ["created_at", "2017-08-31 17:21:19.885129"], ["updated_at", "2017-08-31 17:21:19.885129"]]
+  [1m[35m (6.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/teams/1
+Completed 302 Found in 12ms (ActiveRecord: 7.0ms)
+
+
+Started GET "/teams/1" for 127.0.0.1 at 2017-08-31 10:21:19 -0700
+Processing by TeamsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" WHERE "teams"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering teams/show.html.erb within layouts/application
+  Rendered teams/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 26ms (Views: 18.9ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/teams" for 127.0.0.1 at 2017-08-31 10:21:40 -0700
+Processing by TeamsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vKfa+i4EotDhCedjI0dSVjAfnvdGuc2duS+2EImHXzZ5Z5MxCTXhn7n5cHDJ0BIeDAFjNAh8Gv7p5uEepPpWEA==", "team"=>{"name"=>"Fuckin' Seagulls", "sport"=>"Basketball", "number_required_to_play"=>"5"}, "commit"=>"Create Team"}
+Unpermitted parameter: :name
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "teams" ("sport", "number_required_to_play", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["sport", "Basketball"], ["number_required_to_play", 5], ["created_at", "2017-08-31 17:21:40.040438"], ["updated_at", "2017-08-31 17:21:40.040438"]]
+  [1m[35m (7.8ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/teams/2
+Completed 302 Found in 12ms (ActiveRecord: 8.2ms)
+
+
+Started GET "/teams/2" for 127.0.0.1 at 2017-08-31 10:21:40 -0700
+Processing by TeamsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" WHERE "teams"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering teams/show.html.erb within layouts/application
+  Rendered teams/show.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 22ms (Views: 18.8ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/teams" for 127.0.0.1 at 2017-08-31 10:22:38 -0700
+Processing by TeamsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vKfa+i4EotDhCedjI0dSVjAfnvdGuc2duS+2EImHXzZ5Z5MxCTXhn7n5cHDJ0BIeDAFjNAh8Gv7p5uEepPpWEA==", "team"=>{"name"=>"Fuckin' Seagulls", "sport"=>"Basketball", "number_required_to_play"=>"5"}, "commit"=>"Create Team"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "teams" ("name", "sport", "number_required_to_play", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Fuckin' Seagulls"], ["sport", "Basketball"], ["number_required_to_play", 5], ["created_at", "2017-08-31 17:22:38.091493"], ["updated_at", "2017-08-31 17:22:38.091493"]]
+  [1m[35m (8.4ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/teams/3
+Completed 302 Found in 24ms (ActiveRecord: 12.0ms)
+
+
+Started GET "/teams/3" for 127.0.0.1 at 2017-08-31 10:22:38 -0700
+Processing by TeamsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" WHERE "teams"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering teams/show.html.erb within layouts/application
+  Rendered teams/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 20ms (Views: 17.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/teams" for 127.0.0.1 at 2017-08-31 10:22:40 -0700
+Processing by TeamsController#index as HTML
+  Rendering teams/index.html.erb within layouts/application
+  [1m[36mTeam Load (0.4ms)[0m  [1m[34mSELECT "teams".* FROM "teams"[0m
+  Rendered teams/index.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 41ms (Views: 36.2ms | ActiveRecord: 0.4ms)
+
+
+Started DELETE "/teams/1" for 127.0.0.1 at 2017-08-31 10:22:44 -0700
+Processing by TeamsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"pe+JXYRo5vQCdd8NbqYwL2/r2sJFxwNL1685Rfaoms5gL8CWo1mlu1qFSB6EMXBnU/UnAQsC1CiHZm5L29WT6A==", "id"=>"1"}
+  [1m[36mTeam Load (0.3ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" WHERE "teams"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "teams" WHERE "teams"."id" = $1[0m  [["id", 1]]
+  [1m[35m (11.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/teams
+Completed 302 Found in 17ms (ActiveRecord: 12.1ms)
+
+
+Started GET "/teams" for 127.0.0.1 at 2017-08-31 10:22:44 -0700
+Processing by TeamsController#index as HTML
+  Rendering teams/index.html.erb within layouts/application
+  [1m[36mTeam Load (0.4ms)[0m  [1m[34mSELECT "teams".* FROM "teams"[0m
+  Rendered teams/index.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 52ms (Views: 48.4ms | ActiveRecord: 0.4ms)
+
+
+Started DELETE "/teams/2" for 127.0.0.1 at 2017-08-31 10:22:46 -0700
+Processing by TeamsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"oU+dVWIf7awJWJ1r0nm30dy8ZCl31H3VYu/TqcBtoilkj9SeRS6u41GoCng47veZ4KKZ6jkRqrYyJoSn7RCrDw==", "id"=>"2"}
+  [1m[36mTeam Load (0.8ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" WHERE "teams"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "teams" WHERE "teams"."id" = $1[0m  [["id", 2]]
+  [1m[35m (8.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/teams
+Completed 302 Found in 16ms (ActiveRecord: 9.6ms)
+
+
+Started GET "/teams" for 127.0.0.1 at 2017-08-31 10:22:46 -0700
+Processing by TeamsController#index as HTML
+  Rendering teams/index.html.erb within layouts/application
+  [1m[36mTeam Load (0.8ms)[0m  [1m[34mSELECT "teams".* FROM "teams"[0m
+  Rendered teams/index.html.erb within layouts/application (10.4ms)
+Completed 200 OK in 43ms (Views: 39.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/teams" for 127.0.0.1 at 2017-08-31 10:24:18 -0700
+Processing by TeamsController#index as HTML
+  Rendering teams/index.html.erb within layouts/application
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT "teams".* FROM "teams"[0m
+  Rendered teams/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 22ms (Views: 20.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/teams/new" for 127.0.0.1 at 2017-08-31 10:24:21 -0700
+Processing by TeamsController#new as HTML
+  Rendering teams/new.html.erb within layouts/application
+  Rendered teams/_form.html.erb (4.1ms)
+  Rendered teams/new.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 44ms (Views: 39.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/teams" for 127.0.0.1 at 2017-08-31 10:24:23 -0700
+Processing by TeamsController#index as HTML
+  Rendering teams/index.html.erb within layouts/application
+  [1m[36mTeam Load (0.4ms)[0m  [1m[34mSELECT "teams".* FROM "teams"[0m
+  Rendered teams/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 38ms (Views: 34.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/teams" for 127.0.0.1 at 2017-08-31 10:40:09 -0700
+Processing by TeamsController#index as HTML
+  Rendering teams/index.html.erb within layouts/application
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT "teams".* FROM "teams"[0m
+  Rendered teams/index.html.erb within layouts/application (10.1ms)
+Completed 200 OK in 41ms (Views: 21.2ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/teams/new" for 127.0.0.1 at 2017-08-31 10:40:12 -0700
+Processing by TeamsController#new as HTML
+  Rendering teams/new.html.erb within layouts/application
+  Rendered teams/_form.html.erb (5.7ms)
+  Rendered teams/new.html.erb within layouts/application (9.1ms)
+Completed 200 OK in 40ms (Views: 35.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/teams" for 127.0.0.1 at 2017-08-31 10:40:21 -0700
+Processing by TeamsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"r50zsrO44xeT+6G/BjOSYPf3GjffhPSLLtmpJhMEN2af4CvDTs9TbvZb/UYamCbDzd9uts7EEoBzMu4z2lOtRg==", "team"=>{"name"=>"birdmen", "sport"=>"softball", "number_required_to_play"=>"10"}, "commit"=>"Create Team"}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  Rendering teams/new.html.erb within layouts/application
+  Rendered teams/_form.html.erb (3.0ms)
+  Rendered teams/new.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 35ms (Views: 21.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/teams" for 127.0.0.1 at 2017-08-31 10:40:44 -0700
+Processing by TeamsController#index as HTML
+  Rendering teams/index.html.erb within layouts/application
+  [1m[36mTeam Load (1.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams"[0m
+  Rendered teams/index.html.erb within layouts/application (8.1ms)
+Completed 200 OK in 37ms (Views: 33.0ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/teams/new" for 127.0.0.1 at 2017-08-31 10:40:49 -0700
+Processing by TeamsController#new as HTML
+  Rendering teams/new.html.erb within layouts/application
+  Rendered teams/_form.html.erb (5.8ms)
+  Rendered teams/new.html.erb within layouts/application (10.3ms)
+Completed 200 OK in 38ms (Views: 34.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/teams" for 127.0.0.1 at 2017-08-31 10:41:10 -0700
+Processing by TeamsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"D32eXjeSaqIIma7/LsT+QYSuEM/Mwdpd5lPFBpxmTWY/AIYvyuXa22058gYyb0rivoZkTt2BPFa7uIITVTHXRg==", "team"=>{"name"=>"birdmen", "sport"=>"softball", "number_required_to_play"=>"10"}, "commit"=>"Create Team"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "teams" ("name", "sport", "number_required_to_play", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "birdmen"], ["sport", "softball"], ["number_required_to_play", 10], ["created_at", "2017-08-31 17:41:10.515476"], ["updated_at", "2017-08-31 17:41:10.515476"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/teams/4
+Completed 302 Found in 17ms (ActiveRecord: 4.5ms)
+
+
+Started GET "/teams/4" for 127.0.0.1 at 2017-08-31 10:41:10 -0700
+Processing by TeamsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" WHERE "teams"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering teams/show.html.erb within layouts/application
+  Rendered teams/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 21ms (Views: 18.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/teams" for 127.0.0.1 at 2017-08-31 10:41:12 -0700
+Processing by TeamsController#index as HTML
+  Rendering teams/index.html.erb within layouts/application
+  [1m[36mTeam Load (0.4ms)[0m  [1m[34mSELECT "teams".* FROM "teams"[0m
+  Rendered teams/index.html.erb within layouts/application (7.7ms)
+Completed 200 OK in 36ms (Views: 31.7ms | ActiveRecord: 0.4ms)
+
+
+
   [1m[35m (4.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
   [1m[35m (2.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
   [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7319348385131800500)[0m
@@ -15,3 +610,4 @@ Migrating to DeviseCreateUsers (20170830220139)
   [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
   [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(7319348385131800500)[0m
   [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+
