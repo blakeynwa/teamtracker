@@ -1,6 +1,6 @@
 class PlayersController < ApplicationController
   def index
-     @players = Players.all
+     @players = Player.all
   end
 
   def new
@@ -11,7 +11,7 @@ class PlayersController < ApplicationController
     @players = Player.new(player_params)
 
     if @player.save
-      redirect_to @player, notice: "#{@player.name} was successfully added."
+      redirect_to @player, notice: "#{@player.first_name} #{@player.last_name} was successfully added."
     else
       render :new, status: 422
     end
@@ -42,6 +42,6 @@ class PlayersController < ApplicationController
 
   private
     def player_params
-      params.require(:player).permit(:name, :number)
+      params.require(:player).permit(:first_name, :last_name, :phone_number)
     end
 end
