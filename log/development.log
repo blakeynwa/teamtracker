@@ -12,3 +12,17 @@ Processing by TeamsController#index as HTML
 Completed 200 OK in 685ms (Views: 680.9ms)
 
 
+Started GET "/teams/index" for 127.0.0.1 at 2017-08-30 17:36:47 -0700
+Processing by TeamsController#index as HTML
+  Rendering teams/index.html.erb within layouts/application
+  Rendered teams/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 52ms (Views: 47.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-30 17:36:52 -0700
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/blakemeyer/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/railties-5.1.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/blakemeyer/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/railties-5.1.3/lib/rails/templates/rails/welcome/index.html.erb (7.2ms)
+Completed 200 OK in 15ms (Views: 10.2ms)
+
+
