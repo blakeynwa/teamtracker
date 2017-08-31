@@ -1,17 +1,21 @@
 <h1>Listing teams</h1>
-<%= link_to 'New team', new_team_path %> 
+<%= link_to 'New team', new_team_path %>
 <table>
   <tr>
-    <th>Team name</th>
-    <th>Sport</th>
-    <th>Number required to play</th>
+    <th class="blue-grey lighten-4">Team name</th>
+    <th class="blue-grey lighten-4">Sport</th>
+    <th class="blue-grey lighten-4">Number required to play</th>
+    <th class="blue-grey lighten-4"></th>
+    <th class="blue-grey lighten-4"></th>
+    <th class="blue-grey lighten-4"></th>
   </tr>
- 
+  <% if @teams.last != nil %>
   <% @teams.each do |team| %>
-    <tr>
+    <tr class="card-panel hoverable">
       <td><%= team.name %></td>
       <td><%= team.sport %></td>
       <td><%= team.number_required_to_play %></td>
+
       <td><%= link_to 'Show', team_path(team) %></td>
       <td><%= link_to 'Edit', edit_team_path(team) %></td>
       <td><%= link_to 'Destroy', team_path(team),
@@ -19,4 +23,12 @@
               data: { confirm: 'Are you sure?' } %></td>
     </tr>
   <% end %>
-</table>
+  <%else%>
+    <tr class="card-panel hoverable">
+    <td>no teams has been set up yet.</td>
+    </tr>
+    <%end%>
+</table><br>
+
+  <button class="btn waves-effect waves-light right white" type="submit" name="action"> <%= link_to 'New team', new_team_path %>
+  </button>
