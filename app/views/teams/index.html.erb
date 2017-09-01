@@ -15,7 +15,9 @@
       <td><%= team.name %></td>
       <td><%= team.sport %></td>
       <td><%= team.number_required_to_play %></td>
-
+      <td><form action="/send_message" method="POST">
+          <input type="submit" value="Send a message" />
+          </form></td>
       <td><%= link_to 'Show', team_path(team) %></td>
       <td><%= link_to 'Edit', edit_team_path(team) %></td>
       <td><%= link_to 'Destroy', team_path(team),
