@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
-
+  root 'users#profile'
   get 'users/profile'
-
   get 'teams/index'
 
 #resolve these
