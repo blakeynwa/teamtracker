@@ -12,6 +12,12 @@
   <strong>Number required to play:</strong>
   <%= @team.number_required_to_play %>
 </p>
+
+<p><strong>Player Information:</strong></p>
+<% @team.players.each do |player| %>
+  <p><%= player.first_name %> <%= player.last_name %></p>
+  <p><%= player.phone_number %></p>
+<% end %>
  
 <%= link_to 'Edit', edit_team_path(@team) %> |
 <%= link_to 'Back', teams_path %>
