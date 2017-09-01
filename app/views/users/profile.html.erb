@@ -1,6 +1,4 @@
 <h1><%=email_to_showname(current_user.email)%>'s profile</h1>
-<!-- <p>Find me in app/views/users/profile.html.erb</p> -->
-
 <h2>Teams you manage:</h2>
 <% current_user.teams.each do |team| %>
 <ul>

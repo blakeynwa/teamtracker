@@ -5,10 +5,13 @@ class PlayersController < ApplicationController
 
   def new
     @player = Player.new
+    @teams = Team.all
   end
 
   def create
     @player = Player.new(player_params)
+    @team = Team.find(player_params[:team_id])
+    @team.memberships.create(player: @player)
 
     if @player.save
       redirect_to @player, notice: "#{@player.first_name} #{@player.last_name} was successfully added."
@@ -19,6 +22,7 @@ class PlayersController < ApplicationController
 
   def edit
     @player = Player.find(params[:id])
+    @teams = Team.all
   end
 
   def update
@@ -30,7 +34,7 @@ class PlayersController < ApplicationController
     end
   end
 
-  def delete
+  def destroy
     player = Player.find(params[:id])
     player.destroy
     redirect_to players_url, notice: 'Player was successfully removed.'
@@ -42,6 +46,6 @@ class PlayersController < ApplicationController
 
   private
     def player_params
-      params.require(:player).permit(:first_name, :last_name, :phone_number)
+      params.require(:player).permit(:first_name, :last_name, :phone_number, :team_id)
     end
 end
