@@ -7,7 +7,7 @@
   <strong>Sport:</strong>
   <%= @team.sport %>
 </p>
- 
+
 <p>
   <strong>Number required to play:</strong>
   <%= @team.number_required_to_play %>
@@ -18,6 +18,6 @@
   <p><%= player.first_name %> <%= player.last_name %></p>
   <p><%= player.phone_number %></p>
 <% end %>
- 
+
 <%= link_to 'Edit', edit_team_path(@team) %> |
 <%= link_to 'Back', teams_path %>

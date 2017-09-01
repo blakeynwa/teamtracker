@@ -5,7 +5,7 @@
     <th class="blue-grey lighten-4">Team name</th>
     <th class="blue-grey lighten-4">Sport</th>
     <th class="blue-grey lighten-4">Number required to play</th>
-    <th class="blue-grey lighten-4"></th>
+    <th class="blue-grey lighten-4">Number of current players</th>
     <th class="blue-grey lighten-4"></th>
     <th class="blue-grey lighten-4"></th>
   </tr>
@@ -15,6 +15,7 @@
       <td><%= team.name %></td>
       <td><%= team.sport %></td>
       <td><%= team.number_required_to_play %></td>
+      <td><%= team.players.count %></td>
       <td><form action="/send_message" method="POST">
           <input type="submit" value="Send a message" />
           </form></td>
