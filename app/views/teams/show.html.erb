@@ -13,6 +13,11 @@
   <%= @team.number_required_to_play %>
 </p>
 
+<p>
+  <strong>Number of current players:</strong>
+  <%= @team.players.count %>
+</p>
+
 <p><strong>Player Information:</strong></p>
 <% @team.players.each do |player| %>
   <p><%= player.first_name %> <%= player.last_name %></p>
