@@ -14,20 +14,28 @@ class MessageController < ApplicationController
 
 
   def receive_message
-    message_body = params['Body']
+    message_body = (params['Body'] || '').downcase
     from_number = params['From']
-    # accepted = Accept.open.joins(:player).where(phone_number: 'from_number').first
+    player = Player.find_by(phone_number: from_number.slice(1..-1))
+    game = player.games.chronological.first
+    availability = Availability.new(player: player, game: game)
+
+
     case message_body
     when 'yes'
       response = 'OK! We will see you then!'
+      availability.can_participate = 'yes'
     when 'no'
       response = 'OK! thanks for letting us know.'
+      availability.can_participate = 'no'
     else
       response = "I am sorry I did not catch that. Please reply 'yes' if you can make it, and 'no if you cannot."
     end
+
+    availability.save!
     boot_twilio
     sms = @client.messages.create(
-      from: '+16195676513',
+      from: '16195676513',
       to: from_number,
       body: response
       )
