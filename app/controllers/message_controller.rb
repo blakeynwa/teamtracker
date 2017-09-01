@@ -2,12 +2,13 @@ class MessageController < ApplicationController
  skip_before_action :verify_authenticity_token
 
   def send_message
+    game = Game.all.chronological.first
     boot_twilio
     Player.all.each do |player|
       @client.messages.create(
         from: '+16195676513',
         to: player.phone_number,
-        body: "Your TEAM has a Game at LOCATION on DATE! Please reply 'yes' if you can make it, and 'no' if you are unable to come."
+        body: "Your #{player.teams.name} has a Game at #{game.location} on #{game.date}! Please reply 'yes' if you can make it, and 'no' if you are unable to come."
         )
     end
   end
@@ -35,7 +36,7 @@ class MessageController < ApplicationController
     availability.save!
     boot_twilio
     sms = @client.messages.create(
-      from: '16195676513',
+      from: '+16195676513',
       to: from_number,
       body: response
       )

@@ -17,6 +17,9 @@
   <strong>Away:</strong>
   <%= @game.away_team %>
 </p>
+<form action="/send_message" method="POST">
+  <input type="submit" value="Send a message" />
+</form>
 
 <%= link_to 'Edit', edit_game_path(@game) %> |
 <%= link_to 'Back', games_path %>
