@@ -30,6 +30,11 @@
   </p>
 
   <p>
+    <%= f.label :team %><br>
+    <%= f.select(:team_id, @teams.map{ |team| [team.name, team.id] }) %>
+  </p>
+
+  <p>
     <%= f.submit %>
   </p>
 
