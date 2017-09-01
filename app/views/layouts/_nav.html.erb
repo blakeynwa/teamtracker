@@ -1,9 +1,9 @@
 <nav>
   <div class="nav-wrapper blue-grey darken-1">
-    <a href="#" class="brand-logo center">TeamTracker</a>
+    <h3 class="brand-logo center"><%= link_to('TeamTracker', teams_path) %></h3>
     <ul id="nav-mobile" class="right hide-on-med-and-down" >
-      <li><%= link_to('Home', teams_path) %></li>
       <% if user_signed_in? %>
+      <li><%= link_to("#{current_user.email}", user_root_path) %></li>
       <li><%= link_to('Games', games_path) %></li>
       <li><%= link_to('Teams', teams_path) %></li>
       <li><%= link_to('Players', players_path) %></li>

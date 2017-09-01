@@ -8,5 +8,15 @@
   <%= @game.date %>
 </p>
 
+<p>
+  <strong>Home:</strong>
+  <%= @game.home_team %>
+</p>
+
+<p>
+  <strong>Away:</strong>
+  <%= @game.away_team %>
+</p>
+
 <%= link_to 'Edit', edit_game_path(@game) %> |
 <%= link_to 'Back', games_path %>

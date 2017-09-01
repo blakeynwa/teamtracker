@@ -4,12 +4,16 @@
   <tr>
     <th>Game location</th>
     <th>Game date and time</th>
+    <th>Home</th>
+    <th>Away</th>
   </tr>
 
   <% @games.each do |game| %>
     <tr>
       <td><%= game.location %></td>
       <td><%= game.date %></td>
+      <td><%= game.home_team %></td>
+      <td><%= game.away_team %></td>
       <td><%= link_to 'Show', game_path(game) %></td>
       <td><%= link_to 'Edit', edit_game_path(game) %></td>
       <td><%= link_to 'Destroy', game_path(game),
