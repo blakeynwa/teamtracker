@@ -1,11 +1,14 @@
 <h1>Listing games</h1>
-<%= link_to 'New game', new_game_path %>
 <table>
   <tr>
-    <th>Game location</th>
-    <th>Game date and time</th>
-    <th>Home</th>
-    <th>Away</th>
+    <th class="blue-grey lighten-4">Game location</th>
+    <th class="blue-grey lighten-4">Game date and time</th>
+    <th class="blue-grey lighten-4">Home</th>
+    <th class="blue-grey lighten-4">Away</th>
+    <th class="blue-grey lighten-4"></th>
+    <th class="blue-grey lighten-4"></th>
+    <th class="blue-grey lighten-4"></th>
+    <th class="blue-grey lighten-4"></th>
   </tr>
 
   <% @games.each do |game| %>
@@ -22,3 +25,5 @@
     </tr>
   <% end %>
 </table>
+<button class="btn waves-effect waves-light right white" type="submit" name="action"> <%= link_to 'New game', new_game_path %>
+  </button>
