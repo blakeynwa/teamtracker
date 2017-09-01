@@ -9,10 +9,12 @@ class GamesController < ApplicationController
 
   def new
     @game = Game.new
+    @teams = Team.all
   end
 
   def create
     @game = Game.new(game_params)
+    @teams = Team.all
 
     if @game.save
       redirect_to @game
@@ -44,7 +46,7 @@ class GamesController < ApplicationController
 
   private
   def game_params
-    params.require(:game).permit(:date, :location)
+    params.require(:game).permit(:date, :location, :home_team, :away_team)
   end
 
 end

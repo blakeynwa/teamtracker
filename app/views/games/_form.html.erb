@@ -1,7 +1,4 @@
 <%= form_for @game do |f| %>
-
-<%= f.hidden_field :user_id, value: current_user.id %>
-
   <% if @game.errors.any? %>
     <div id="error_explanation">
       <h2>
@@ -24,6 +21,16 @@
   <p>
     <%= f.label :location %><br>
     <%= f.text_field :location %>
+  </p>
+
+  <p>
+    <%= f.label :home_team %><br>
+    <%= f.select(:home_team, @teams.map{ |team| [team.name, team.name] }) %>
+  </p>
+
+  <p id="teams_drop_down">
+    <%= f.label :away_team %><br>
+    <%= f.select(:away_team, @teams.map{ |team| [team.name, team.name] }) %>
   </p>
 
   <p>

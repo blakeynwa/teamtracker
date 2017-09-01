@@ -26,6 +26,8 @@ ActiveRecord::Schema.define(version: 20170831230457) do
   create_table "games", force: :cascade do |t|
     t.datetime "date"
     t.string "location"
+    t.string "home_team"
+    t.string "away_team"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
